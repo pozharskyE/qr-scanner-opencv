@@ -1,4 +1,4 @@
-def qr_from_live_video(cam_id =0, write_img =False, delay =1):
+def qr_from_live_video(cam_id =0, write_qr_arr =False, delay =1):
     import cv2
     cap = cv2.VideoCapture(cam_id)
     
@@ -10,7 +10,7 @@ def qr_from_live_video(cam_id =0, write_img =False, delay =1):
         if was_detected:
             cv2.destroyWindow('QR scanner')
 
-            if write_img:
+            if write_qr_arr:
                 return decoded_info, qr_array
             else:
                 return decoded_info
